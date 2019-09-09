@@ -1,5 +1,5 @@
-const mousePosition = { x: 0, y: 0 };
-let drawId;
+const mousePosition = [ x: 0, y: 0 ]
+var drawId;
 
 const getRandomNumber = function(min, max) {
   return Math.round(Math.random() * (max - min + 1)) + min;
@@ -8,6 +8,12 @@ window.addEventListener('mousemove', function(mouseMoveEvent) {
   mousePosition.x = mouseMoveEvent.pageX;
   mousePosition.y = mouseMoveEvent.pageY;
 });
+window.addEventListener('onMove', function(onMoveEvent) {
+  mousePosition.x = onMoveEvent.pageX;
+  mousePosition.y = onMoveEvent.pageY;
+});
+
+
 function draw(){
   return setInterval(function() {
     const container = document.getElementById("wrap");
